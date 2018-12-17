@@ -5,8 +5,9 @@ export const PATHS = Object.freeze({
   INDEX: '/',
 //   ITEM_DETAILS: '/items/:id',
   SIGNIN: '/signin', 
-  SIGNUP: '/signup'
-});
+  SIGNUP: '/signup',
+  LOGOUT: '/Logout'
+}); 
 
 export const ROUTES = Object.freeze([
   {

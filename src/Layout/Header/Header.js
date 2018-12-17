@@ -8,7 +8,9 @@ class Header extends Component {
       <Link to={PATHS.INDEX}>HomeToDos </Link>
       {/* <Link to={PATHS.ITEM_DETAILS}>Items Details </Link> */}
        <Link to={PATHS.SIGNIN}>Sign In </Link>
-      <Link to={PATHS.SIGNUP}>Sign Up</Link> 
+      <Link to={PATHS.SIGNUP}>Sign Up </Link> 
+      <Link to={PATHS.SIGNIN} onClick={() => {localStorage.clear()}}>Logout</Link>
+      {/* <Link to={PATHS.TODOS}>List</Link> */}
     </header>
   }
 }

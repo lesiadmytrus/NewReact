@@ -24,19 +24,19 @@ HandleChange = (event) => {
 
 HandleSubmit = (event) => {
     event.preventDefault();
-axios({
-    method: "POST",
-    url: 'https://node--api.herokuapp.com/users/sign_up',
-   data: 
-    {
-    'firstName': this.state.firstName,
-    'lastName': this.state.lastName,
-    'email': this.state.email,
-    'username': this.state.username,
-    'password': this.state.password,
+    axios({
+        method: 'POST',
+        url:    'https://node--api.herokuapp.com/users/sign_up',
+        data: 
+        {
+            'firstName': this.state.firstName,
+            'lastName': this.state.lastName,
+            'email': this.state.email,
+            'username': this.state.username,
+            'password': this.state.password,
 }
 
-})
+    })
 .then(function (response) {
     alert('Thank you for regisration');
   })
@@ -49,31 +49,33 @@ axios({
     return (
             <div className="signup-container">
                 <h1>{this.state.word}</h1>
-                <form onSubmit={this.HandleSubmit}>
-                <div>
-                    <label>firstname </label>
-                    <input type="text" name="firstName" value={this.state.firstName} onChange={this.HandleChange}/>
+                <div className="col-md-6 col-md-offset-3">
+                <form name='form' onSubmit={this.HandleSubmit}>
+                <div className='form-group'>
+                    <label htmlFor='firstname'>firstname </label>
+                    <input type="text" className="form-control" name="firstName" value={this.state.firstName} onChange={this.HandleChange}/>
                 </div>
-                <div>
-                    <label>Lastname</label>
-                    <input type="text" name="lastName" value={this.state.lastName} onChange={this.HandleChange}/>
+                <div className='form-group'>
+                    <label htmlFor='lastname'>Lastname</label>
+                    <input type="text" className="form-control" name="lastName" value={this.state.lastName} onChange={this.HandleChange}/>
                 </div>
-                <div>
-                    <label>username</label>
-                    <input type="text" name="username" value={this.state.username} onChange={this.HandleChange}/>
+                <div className='form-group'>
+                    <label htmlFor='username'>username</label>
+                    <input type="text" className="form-control" name="username" value={this.state.username} onChange={this.HandleChange}/>
                 </div>
-                <div>
-                    <label>E-mail </label>
-                    <input type="text" name="email" value={this.state.email} onChange={this.HandleChange}/>
+                <div className='form-group'>
+                    <label htmlFor='email'>E-mail </label>
+                    <input type="email" className="form-control" name="email" value={this.state.email} onChange={this.HandleChange}/>
                 </div>
-                <div>
-                    <label>password </label>
-                    <input type="password" name="password" value={this.state.password} onChange={this.HandleChange} />  
+                <div className='form-group'>
+                    <label htmlFor='password'>password </label>
+                    <input type="password" className="form-control" name="password" placeholder='password' value={this.state.password} onChange={this.HandleChange} />  
                 </div>
-                <div>
-                    <input type="submit" value='Sign In' />
+                <div className='form-group'>
+                    <input type="submit" className="btn btn-primary" value='Sign In' />
                 </div>
                 </form>
+                </div>
             </div>
         );
   }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import  { Link } from 'react-router-dom';
+import {PATHS} from "../route";
 
 class Signin extends Component {
   constructor(props){
@@ -19,9 +21,11 @@ HandleChange = (event) => {
     });
 }
 
+
+  
+
 HandleSubmit = (event) => {
     event.preventDefault();
-console.log('i am handlesubmit');
 // fetch('https://node--api.herokuapp.com/users/sign_in',
 // {
 //     method: "POST",
@@ -52,24 +56,30 @@ axios(
   .catch(function (error) {
     console.log(error);
   });
+
+
 }
   render () {
     return (
             <div className="signin-container">
                 <h1>{this.state.word}</h1>
-                <form onSubmit={this.HandleSubmit}>
-                <div>
-                    <label>username </label>
-                    <input type="text" name="username" value={this.state.username} onChange={this.HandleChange}/>
+                <div className="col-md-6 col-md-offset-3">
+                <form name="form" onSubmit={this.HandleSubmit}>
+                <div className='form-group'>
+                    <label htmlFor="username">username </label>
+                    <input type="text" className="form-control" name="username" value={this.state.username} onChange={this.HandleChange}/>
                 </div>
                 <div>
-                    <label>password </label>
-                    <input type="password" name="password" value={this.state.password} onChange={this.HandleChange} />  
+                    <label htmlFor='password'>password</label>
+                    <input type="password" className="form-control" name="password" value={this.state.password} onChange={this.HandleChange} />
+                    <br/>  
                 </div>
-                <div>
-                    <input type="submit" value='Sign In' />
+                <div className='form-group'>
+                    <input className="btn btn-primary" type="submit" value='Sign In'/>
+                    {/* <Link to={PATHS.INDEX}></Link> */}
                 </div>
                 </form>
+                </div>
 
             </div>
         );
