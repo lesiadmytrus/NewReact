@@ -12,4 +12,4 @@ import {
     }
   };
   
-  export default visibilityFilter;
+  export default visibilityFilter; 

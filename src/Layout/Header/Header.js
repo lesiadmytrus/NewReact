@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { PATHS } from '../../route';
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+import {PATHS} from '../../route';
 
 class Header extends Component {
-  render () {
+  render() {
     return <header className="header">
       <Link to={PATHS.INDEX}>HomeToDos </Link>
-      {/* <Link to={PATHS.ITEM_DETAILS}>Items Details </Link> */}
-       <Link to={PATHS.SIGNIN}>Sign In </Link>
-      <Link to={PATHS.SIGNUP}>Sign Up </Link> 
-      <Link to={PATHS.SIGNIN} onClick={() => {localStorage.clear()}}>Logout</Link>
-      {/* <Link to={PATHS.TODOS}>List</Link> */}
+      <Link to={PATHS.SIGNIN}>SignIn </Link>
+      <Link to={PATHS.SIGNUP}>SignUp </Link>
+      <Link to={PATHS.SIGNIN} onClick={() => {
+        localStorage.clear()
+      }}>Logout</Link>
     </header>
   }
 }

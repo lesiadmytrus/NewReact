@@ -8,7 +8,7 @@ class initialData {
     }
 
     setvalue = () => {
-        const iam = this;
+        const iam = this; 
         axios(
             {
                 method: "GET",
@@ -56,4 +56,4 @@ const TodoReducer = (state=INITIAL_DATA, action) => {
     }
 }
 
-export default TodoReducer
+export default TodoReducer;

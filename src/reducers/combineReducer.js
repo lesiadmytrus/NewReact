@@ -5,4 +5,4 @@ import visibilityFilter from './filterReducer';
 export default combineReducers({
     todos,
     visibilityFilter,
-});
+}); 
